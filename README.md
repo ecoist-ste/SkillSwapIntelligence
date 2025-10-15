@@ -138,7 +138,7 @@ This is actually super important, so I want everyone to be onboard with this. Be
     }
   ```
   - Notice a few things happening here:
-    - If the user hasn't requested a response, we show a default start view, otherwise if the model has generated some partial response, we feed it into the ChatView to display this partial information -- this is where the streaming feel of the response coems from.
+    - If the user hasn't requested a response, we show a default start view, otherwise if the model has generated some partial response, we feed it into the ChatView to display this partial information -- this is where the streaming feel of the response comes from.
     - How the user initiates a running of your Service is first by typing their question into the textfield and click on the send button, which contains logics to trigger the service's core.
     - ‼️At the end of this file, there's a `.task{}` view modifier, note that this means the code wrapped inside will be run when this view **just** appears, making it the perfect place to instantiate our AI service as well as prewarming the LLM.
 
@@ -184,7 +184,7 @@ This is actually super important, so I want everyone to be onboard with this. Be
   ```
 
 - Some important notes about this view:
-    - Note that to display any sub-content response (e.g. the statement, and explanation in this case) generated from the LLM, you need to first **unwrap** it because the partial response **may or may note** have been generated.
+    - Note that to display any sub-content response (e.g. the statement, and explanation in this case) generated from the LLM, you need to first **unwrap** it because the partial response **may or may not** have been generated.
     - The view modifier `.contentTransition(.opacity)` attached to the response text view and `animation(.easeInOut, value: response)` attached to the overall container in combination make the streaming feel possible. So please use them.
 
 
